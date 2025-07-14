@@ -6,9 +6,7 @@ fn main() {
         .file("csrc/backends/fb.c")
         .include("csrc")
         .include("csrc/backends")
-        .flag("-fPIC")
-        .flag("-ffreestanding")
-        .flag("-std=c17")
+        .pic(true)
         .compile("flanterm");
 
     let bindings = bindgen::Builder::default()
